@@ -58,7 +58,7 @@ async function createAnalysis(){
 
     })
     let data = fetchmacronutrition();
-    console.log(data[0])
+    console.log(data)
 
 }
 async function createUser(){
