@@ -46,8 +46,17 @@ async function createUser(){
     .then((res) => {
         console.log(res.body)
     }) 
-    
-   return fetchmacronutrition()
+    let food_list = document.getElementById("foodList")
+    var total_calories = 0;
+    var total_carbs = 0;
+    var total_protein = 0;
+    var total_fats = 0;
+    var fix_food = food_list.split(',').map(item=> item.trim())
+    console.log(fix_food)
+    for (let x = 0; x < fix_food.length; x++){
+        console.log(fix_food[x])
+    }
+  
 }
 window.onload = fetchmacronutrition()
 window.onload = createAnalysis();
