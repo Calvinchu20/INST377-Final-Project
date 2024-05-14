@@ -22,18 +22,19 @@ async function fetchmacronutrition(){
         });
     
         
-            const nutrients = await fetch('https://trackapi.nutritionix.com/v2/natural/nutrients', {
-                method: 'POST',
-                headers: headers,
-                body: body
-            });
+        const nutrients = await fetch('https://trackapi.nutritionix.com/v2/natural/nutrients', {
+            method: 'POST',
+            headers: headers,
+            body: body
+        });
     
-            const data = await nutrients.json();
-            console.log(data);
-            total_calories+= data.foods[0].nf_calories
-            total_fats += data.foods[0].nf_total_fats
-            total_carbs+= data.foods[0].nf_total_carbohydrate
-            total_protein += data.foods[0].nf_protein
+        const data = await nutrients.json();
+        console.log(data);
+        console.log(data.foods[0])
+        total_calories += data.foods[0].nf_calories
+        total_fats += data.foods[0].nf_total_fat
+        total_carbs+= data.foods[0].nf_total_carbohydrate
+        total_protein += data.foods[0].nf_protein
 
     }
     return {
