@@ -93,3 +93,15 @@ body {
     height: 50%;
 
 }
+
+#chartbox{
+    display: none;
+    background-color: antiquewhite;
+    width: 80%;
+
+}
+#analysis{
+    display:none;
+    background-color: antiquewhite;
+    width: 80%;
+}
