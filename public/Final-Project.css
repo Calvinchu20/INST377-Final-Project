@@ -90,7 +90,7 @@ body {
 
 }
 #formCalories{
-    height: 50%;
+    height: 40%;
 
 }
 
@@ -98,10 +98,15 @@ body {
     display: none;
     background-color: antiquewhite;
     width: 80%;
+    height: 50%;
+    text-align: center;
 
 }
 #analysis{
     display:none;
     background-color: antiquewhite;
     width: 80%;
+    height: 50%;
+    text-align: center;
+   
 }

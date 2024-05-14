@@ -59,6 +59,15 @@ async function createAnalysis(){
         fetchmacronutrition()
         .then(foodCalculate =>{
             console.log(foodCalculate.total_calories)
+            const box = document.getElementById('analysis')
+            const calories = document.createElement('h2')
+            calories.innerText = 'Total calories is '+ foodCalculate.total_calories + ' and the goal calories is ' + res[res.length-1].goal_calories;
+            const fats = document.createElement('h2')
+            fats.innerText = 'Total fats is '+ foodCalculate.total_fats + ' and the goal fats is ' + res[res.length-1].goal_fats;
+            const carbs = document.createElement('h2')
+            carbs.innerText = 'Total carbs is '+ foodCalculate.total_carbs + ' and the goal carbs is ' + res[res.length-1].goal_carbs;
+            const protein = document.createElement('h2')
+            protein.innerText = 'Total protein is '+ foodCalculate.total_protein + ' and the goal protein is ' + res[res.length-1].goal_protein;
             const bar = document.getElementById('progress').getContext('2d')
             const label_x = ['total_calories','goal_calories','total_fats','goal_fats',"total_carbs","goal_carbs","total_protein","goal_protein"]
             const info = [
@@ -93,6 +102,8 @@ async function createAnalysis(){
             }
             console.log(graph)
             document.getElementById("chartbox").style.display = "block"
+
+            document.getElementById('analysis').style.display ="block"
         })
 
     })
