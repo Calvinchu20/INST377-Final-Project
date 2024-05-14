@@ -47,7 +47,7 @@ async function createUser(){
         console.log(res.body)
     }) 
     
-   
+   return fetchmacronutrition()
 }
 window.onload = fetchmacronutrition()
 window.onload = createAnalysis();
