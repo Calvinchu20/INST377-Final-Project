@@ -37,12 +37,12 @@ async function fetchmacronutrition(){
         total_protein += data.foods[0].nf_protein
 
     }
-    return [
+    return {
         total_calories,
         total_fats,
         total_carbs,
         total_protein
-    ];
+    };
 
 
   
@@ -57,8 +57,9 @@ async function createAnalysis(){
         console.log(res[res.length-1].first_name)
 
     })
-    let data = fetchmacronutrition();
-    console.log(data)
+    fetchmacronutrition()
+        .then(foodCalculate =>console.log(foodCalculate) )
+  
 
 }
 async function createUser(){
