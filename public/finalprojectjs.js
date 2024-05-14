@@ -62,7 +62,7 @@ async function createAnalysis(){
             bar = document.getElementById('progress').getContext('2d')
             label_x = ['total_calories','goal_calories','total_fats','goal_fats',"total_carbs","goal_carbs","total_protein","goal_protein"]
             info = [
-                foodCalculate.total_calories,res.goal_calories,foodCalculate.total_fats,res.goal_fats,foodCalculate.total_carbs,res.goal_carbs,foodCalculate.total_protein,res.goal_protein
+                foodCalculate.total_calories,res[res.length-1].goal_calories,foodCalculate.total_fats,res[res.length-1].goal_fats,foodCalculate.total_carbs,res[res.length-1].goal_carbs,foodCalculate.total_protein,res[res.length-1].goal_protein
             ]
             console.log("x ", label_x)
             console.log("y ",info)
@@ -76,7 +76,7 @@ async function createAnalysis(){
                     data: {
                         labels: label_x,
                         datasets: [{
-                        label: 'Stock Price',
+                        label: 'Daily intake vs goals',
                         data: info,
                         borderWidth: 1
                         }]
