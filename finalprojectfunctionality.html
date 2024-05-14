@@ -5,6 +5,7 @@
 <head>
     <title>INST377 - Final Project - Help</title>
     <link rel="stylesheet" href="Final-Project.css">
+    <script src = 'finalprojectjs.js' defer></script>
 
 </head>
 
@@ -67,22 +68,21 @@
             </div>
         </div>
     </div>
-    <h2>Let's calculate health</h2>
-    <form id = "formCalories" action="">
+    <form id="formCalories" onsubmit="createUser(); return false;">
         <label for="name">First name</label>
-        <input type="text">
+        <input type="text" id="firstName">
         <br>
         <label for="lastName">Last name</label>
-        <input type="text">
+        <input type="text" id="lastName">
         <br>
         <label for="calories">Goal calories intake</label>
-        <input type="number">
+        <input type="number" id="calories">
         <label for="fats">Goal fats intake</label>
-        <input type="number">
+        <input type="number" id="fats">
         <label for="carbs">Goal carbs intake</label>
-        <input type="number">
+        <input type="number" id="carbs">
         <label for="protein">Goal protein intake</label>
-        <input type="number"> 
+        <input type="number" id="protein"> 
         <br>
         <input type="submit">          
 
