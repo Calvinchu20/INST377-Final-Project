@@ -20,7 +20,7 @@ app.get('/trackers', async(req,res)=>{
 
 })
 app.get('/',(req,res)=>{
-    res.sendFile('/finalprojectfunctionality.html',{root: __dirname})
+    res.sendFile('finalprojectfunctionality.html',{root: __dirname})
     
 })
 app.post('/trackers',async (req,res)=>{
