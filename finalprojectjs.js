@@ -19,8 +19,8 @@ async function createUser(){
     await fetch(`${host}/trackers`,{
         method:"POST",
         body: JSON.stringify({
-            "firstName": `${document.getElementById('firstName').value}`, 
-            "lastName": `${document.getElementById("lastName").value}`, 
+            "first_name": `${document.getElementById('firstName').value}`, 
+            "last_name": `${document.getElementById("lastName").value}`, 
             "goal_calories":`${document.getElementById('calories').value}`,
             "goal_fats":`${document.getElementById('fats').value}`,
             "goal_carbs":`${document.getElementById('carbs').value}`,
