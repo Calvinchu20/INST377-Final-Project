@@ -91,6 +91,7 @@ async function createAnalysis(){
                     });
                     
             }
+            console.log(graph)
             document.getElementById("chartbox").style.display = "block"
         })
 
