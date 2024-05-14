@@ -60,9 +60,11 @@ async function createAnalysis(){
         .then(foodCalculate =>{
             console.log(foodCalculate.total_calories)
             const box = document.getElementById('analysis')
-            if(box){
-                box.remove()
-            }
+            const existContent = box.querySelectorAll('h2')
+            existContent.forEach(function(element){
+                element.remove()
+            })
+
             const calories = document.createElement('h2')
             calories.innerText = 'Total calories is '+ foodCalculate.total_calories + ' and the goal calories is ' + res[res.length-1].goal_calories;
             const fats = document.createElement('h2')
