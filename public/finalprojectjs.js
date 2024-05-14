@@ -20,7 +20,7 @@ async function fetchmacronutrition(){
 
     const nutrients = await temple.json();
     console.log(nutrients)
-    console.log(nutrients.foods[0]);
+    console.log(nutrients.foods[0].nf_protein);
 
 }
 async function createAnalysis(){
