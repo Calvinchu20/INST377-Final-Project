@@ -47,6 +47,7 @@ async function createUser(){
         console.log(res.body)
     }) 
     let food_list = document.getElementById("foodList")
+    console.log(food_list)
     var total_calories = 0;
     var total_carbs = 0;
     var total_protein = 0;
