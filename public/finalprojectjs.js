@@ -58,9 +58,8 @@ async function createAnalysis(){
 
     })
     fetchmacronutrition()
-        .then(foodCalculate =>foodCalculate.json() )
-        .then((foodCalculate)=>{
-            console.log(foodCalculate.total_fats)
+        .then(foodCalculate =>{
+            console.log(foodCalculate.total_calories)
         })
   
 
