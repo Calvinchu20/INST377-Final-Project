@@ -56,7 +56,7 @@ async function createAnalysis(){
 
     })
     let data = fetchmacronutrition();
-    console.log(data)
+    console.log(data.total_calories)
 
 }
 async function createUser(){
