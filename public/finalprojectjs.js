@@ -91,7 +91,7 @@ async function createAnalysis(){
                     });
                     
             }
-            document.getElementById("progress").style.display = "block"
+            document.getElementById("chartbox").style.display = "block"
         })
 
     })
