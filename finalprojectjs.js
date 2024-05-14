@@ -19,15 +19,18 @@ async function createUser(){
     await fetch(`${host}/trackers`,{
         method:"POST",
         body: JSON.stringify({
-            "first_name": document.getElementById('firstName').value, 
-            "last_name": document.getElementById("lastName").value, 
-            "goal_calories":document.getElementById('calories').value,
-            "goal_fats":document.getElementById('fats').value,
-            "goal_carbs":document.getElementById('carbs').value,
-            "goal_protein":document.getElementById('protein').value,
+            "first_name": `${document.getElementById('firstName').value}`, 
+            "last_name": `${document.getElementById("lastName").value}`, 
+            "goal_calories":`${document.getElementById('calories').value}`,
+            "goal_fats":`${document.getElementById('fats').value}`,
+            "goal_carbs":`${document.getElementById('carbs').value}`,
+            "goal_protein":`${document.getElementById('protein').value}`,
 
         }),
-        "Content-type": "application/json"
+        headers: {
+            "Content-type": "application/json"
+        }
+        
     })
     .then((res) => res.json())
     .then((res) => {

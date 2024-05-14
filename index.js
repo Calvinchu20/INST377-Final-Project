@@ -5,7 +5,7 @@ const app = express()
 const port = 5500
 app.use(bodyParser.json())
 console.log(__dirname)
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname))
 const url = 'https://omyubdszrtwpuchetxkn.supabase.co'
 const supabase_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9teXViZHN6cnR3cHVjaGV0eGtuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1NTI5MTEsImV4cCI6MjAzMTEyODkxMX0.Da3dSw3AznoXN8I43YO5uEEkp804SVm8UoFc8sh6uHQ'
 const supabase = supabaseClient.createClient(url,supabase_key)
@@ -20,7 +20,8 @@ app.get('/trackers', async(req,res)=>{
 
 })
 app.get('/',(req,res)=>{
-    res.sendFile('public/finalprojectfunctionality.html',{root: __dirname})
+    res.sendFile('/finalprojectfunctionality.html',{root: __dirname})
+    
 })
 app.post('/trackers',async (req,res)=>{
     console.log("adding client")
@@ -39,7 +40,7 @@ app.post('/trackers',async (req,res)=>{
         .insert([
             {'first_name': firstName, 'last_name': lastName, 'goal_calories': goal_calories,'goal_fats': goal_fats, 'goal_carbs': goal_carbs,'goal_protein': goal_protein},
          ])
-    .select()
+        .select()
     if(error){
         res.send(error)
         console.log("error", error)
