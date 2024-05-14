@@ -3,26 +3,40 @@ console.log(host)
 const ID = "d87eb441"
 const KEY = '6343bb2aa6042fa83f23e2c95a7931c7'
 async function fetchmacronutrition(){
-   
-        const url = 'https://trackapi.nutritionix.com/v2/natural/nutrients';
+    let food_list = document.getElementById("foodList").value
+    var total_calories = 0;
+    var total_carbs = 0;
+    var total_protein = 0;
+    var total_fats = 0;
+    var fix_food = food_list.split(',').map(item=> item.trim())
+    console.log(fix_food)
+    for (let x = 0; x < fix_food.length; x++){
+        
         const headers = {
             'Content-Type': 'application/json',
-            'x-app-id': 'YOUR_APP_ID',
-            'x-app-key': 'YOUR_APP_KEY',
+            'x-app-id': 'd87eb441',
+            'x-app-key': '6343bb2aa6042fa83f23e2c95a7931c7',
         };
         const body = JSON.stringify({
-            query: "grape"
+            query: fix_food[x]
         });
     
         
-            const response = await fetch(url, {
+            const nutrients = await fetch('https://trackapi.nutritionix.com/v2/natural/nutrients', {
                 method: 'POST',
                 headers: headers,
                 body: body
             });
     
-            const data = await response.json();
+            const data = await nutrients.json();
             console.log(data);
+            total_calories+= data.foods[0]
+            total_fats
+            total_carbs
+
+    }
+  
+  
 
 
 }
@@ -56,22 +70,25 @@ async function createUser(){
     .then((res) => {
         console.log(res.body)
     }) 
-   
-    let food_list = document.getElementById("foodList").value
-    var total_calories = 0;
-    var total_carbs = 0;
-    var total_protein = 0;
-    var total_fats = 0;
-    var fix_food = food_list.split(',').map(item=> item.trim())
-    console.log(fix_food)
-    for (let x = 0; x < fix_food.length; x++){
-        console.log(fix_food[x])
-    }
-    console.log(fix_food)
-    for (let x = 0; x < fix_food.length; x++){
-        console.log(fix_food[x])
-    }
-  
+    const headers = {
+        'Content-Type': 'application/json',
+        'x-app-id': 'd87eb441',
+        'x-app-key': '6343bb2aa6042fa83f23e2c95a7931c7',
+    };
+    const body = JSON.stringify({
+        query: 'grape'
+    });
+
+    
+        const nutrients = await fetch('https://trackapi.nutritionix.com/v2/natural/nutrients', {
+            method: 'POST',
+            headers: headers,
+            body: body
+        });
+
+        const data = await nutrients.json();
+        console.log(data);
+
 }
-window.onload = fetchmacronutrition()
+
 window.onload = createAnalysis();
