@@ -64,9 +64,12 @@ async function createAnalysis(){
             info = [
                 foodCalculate.total_calories,res.goal_calories,foodCalculate.total_fats,res.goal_fats,foodCalculate.total_carbs,res.goal_carbs,foodCalculate.total_protein,res.goal_protein
             ]
+            console.log("x ", label_x)
+            console.log("y ",info)
             if(graph){
                 graph.data.labels = label_x
                 graph.data.datasets[0].data = info
+                graph.update();
             }else{
                 graph = new Chart(bar, {
                     type: 'bar',
@@ -86,8 +89,9 @@ async function createAnalysis(){
                             }
                                 }
                     });
-                    document.getElementById("progress").style.display = "block"
+                    
             }
+            document.getElementById("progress").style.display = "block"
         })
 
     })
