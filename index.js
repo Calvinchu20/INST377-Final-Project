@@ -20,7 +20,7 @@ app.get('/trackers', async(req,res)=>{
 
 })
 app.get('/',(req,res)=>{
-    res.sendFile('public/finalprojectfunctionality.html',{root:__dirname})
+    res.sendFile('public/finalprojectfunctionality.html',{root: __dirname})
 })
 app.post('/trackers',async (req,res)=>{
     console.log("adding client")
