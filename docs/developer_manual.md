@@ -2,11 +2,11 @@
 
 # how to download the application/software
  1. clone the github repository either 
-    `git clone <repository>` or use the github desktop application
+    -`git clone <repository>` or use the github desktop application
  2. install the dependencies 
-     `npm install express`
-     `npm install nodemon`
-     `npm install @supabase/supabase-js`
+     -`npm install express`
+     -`npm install nodemon`
+     -`npm install @supabase/supabase-js`
 # how to run the application
   1. local server: call npm start :
     ` npm start `
