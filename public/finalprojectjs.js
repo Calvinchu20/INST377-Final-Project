@@ -3,7 +3,7 @@ console.log(host)
 const ID = "d87eb441"
 const KEY = '6343bb2aa6042fa83f23e2c95a7931c7'
 async function fetchmacronutrition(){
-    const url = 'https://trackapi.nutritionix.com/v2/natural/nutrients';
+
     const headers = {
         'Content-Type': 'application/json',
         'x-app-id': 'd87eb441',
@@ -12,19 +12,15 @@ async function fetchmacronutrition(){
     const body = JSON.stringify({
         query: "grape"
     });
-
-    try {
-        const response = await fetch(url, {
+    const temple = await fetch('https://trackapi.nutritionix.com/v2/natural/nutrients', {
             method: 'POST',
             headers: headers,
             body: body
-        });
+    });
 
-        const data = await response.json();
-        console.log(data);
-    } catch (error) {
-        console.error('Error:', error);
-    }
+    const nutrients = await temple.json();
+    console.log(nutrients);
+
 }
 async function createAnalysis(){
     await fetch(`${host}/trackers`)
