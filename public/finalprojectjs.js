@@ -46,7 +46,7 @@ async function createUser(){
     .then((res) => {
         console.log(res.body)
     }) 
-    let food_list = document.getElementById("foodList")
+    let food_list = document.getElementById("foodList").value
     console.log(food_list)
     var total_calories = 0;
     var total_carbs = 0;
