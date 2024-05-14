@@ -5,4 +5,4 @@ description: Nutrition application that help users to input their goal macros an
 
 Description of desired target: we plan on implementing this application on both IOS/Andriod for moblie accessiblity for users to track their progress whenever they go
 
-link to developer Manual:
+link to developer Manual: index.js
