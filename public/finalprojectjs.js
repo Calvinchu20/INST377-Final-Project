@@ -2,21 +2,29 @@ var host = window.location.origin;
 console.log(host)
 const ID = "d87eb441"
 const KEY = '6343bb2aa6042fa83f23e2c95a7931c7'
-async function fetchmacronutrition(food){
-    const response = await fetch(`https://api.nutritionix.com/v2/natural/nutrients`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'x-app-id': ID,
-            'x-app-key': KEY,
-        },
-        body: JSON.stringify({
-            query: food
-        })
+async function fetchmacronutrition(){
+    const url = 'https://trackapi.nutritionix.com/v2/natural/nutrients';
+    const headers = {
+        'Content-Type': 'application/json',
+        'x-app-id': 'd87eb441',
+        'x-app-key': '6343bb2aa6042fa83f23e2c95a7931c7',
+    };
+    const body = JSON.stringify({
+        query: "grape"
     });
-    const data = await response.json();
-    console.log("api", data)
-  
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: headers,
+            body: body
+        });
+
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
 async function createAnalysis(){
     await fetch(`${host}/trackers`)
@@ -51,5 +59,5 @@ async function createUser(){
     
    
 }
-window.onload = fetchmacronutrition('banana')
+window.onload = fetchmacronutrition()
 window.onload = createAnalysis();
