@@ -30,7 +30,7 @@
 
 # roadmap for future/bugs
   1. Known Bugs
-    `uplicate users entries are implemented in the api and causes confusion for analysis
+    duplicate users entries are implemented in the api and causes confusion for analysis
 
   2. roadmap
        Provide a baseline application for more advanced/complex functionality for tracking nutrition
