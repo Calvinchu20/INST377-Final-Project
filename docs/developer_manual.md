@@ -1,21 +1,47 @@
 ### Developer Manual
 
 # how to download the application/software
- 1. clone the github repository either 
+ 1. clone the github repository either
+
+    
     -`git clone <repository>` or use the github desktop application
- 2. install the dependencies 
+ 2. install the dependencies
+
+    - install nvm from the link: https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/
+
+
+     - open terminal or command prompt, then install node
+
+     -`nvm install node`
+
+    
      -`npm install express`
+
+    
      -`npm install nodemon`
+    
      -`npm install @supabase/supabase-js`
 # how to run the application
-  1. local server: call npm start :
-    ` npm start `
-  2. go to local server Ex(127.0.0.1:5500) on insomina and run the application
+  local serve
+  
+  call npm start in command prompt or terminal
 
-  2. Vercel
-    1. create a vercel account
-    2. input the git repository into projects and wait for completion 
-    3. then run it 
+     
+    `npm start`
+
+  go to local server Ex(127.0.0.1:5500) on insomina and run the application
+
+ 
+  Vercel
+
+     
+  create a vercel account
+
+    
+  input the git repository into projects and wait for completion 
+
+    
+   then run it 
 # test 
   1. creating a user/displaying the chart
   2.  first follow the instruction of completing the form
@@ -23,18 +49,36 @@
 
 # API 
 1. Get
- `/trackers` - receive the user's name,goal calories, and goal macros
+ `/trackers` -
+
+receive the user's name,goal calories, and goal macros
+
 2. Post
-  `/trackers` - insert the user's name, goal calories, and goal macros
+  `/trackers` - 
+  
+  insert the user's name, goal calories, and goal macros
 
 
 # roadmap for future/bugs
   1. Known Bugs
+<<<<<<< HEAD
     duplicate users entries are implemented in the api and causes confusion for analysis
+=======
+    
+ 
+       duplicate users entries are implemented in the api and causes confusion for analysis
+
+>>>>>>> 888381662ddf7b11ab6fe5f27c922afaa9c94d0f
 
   2. roadmap
+
+
        Provide a baseline application for more advanced/complex functionality for tracking nutrition
+
+     
        allows insight for users interface database and improve design
+
+     
        improvement on overall performance and user interface experience
 
  
