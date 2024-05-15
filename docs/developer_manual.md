@@ -51,10 +51,10 @@
 1. Get
  `/trackers` -
 
-receive the user's name,goal calories, and goal macros
+ receive the user's name,goal calories, and goal macros
 
 2. Post
-  `/trackers` - 
+  `/user` - 
   
   insert the user's name, goal calories, and goal macros
 

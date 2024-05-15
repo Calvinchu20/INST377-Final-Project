@@ -24,7 +24,7 @@ app.get('/trackers', async(req,res)=>{
 
 })
 
-app.post('/trackers',async (req,res)=>{
+app.post('/user',async (req,res)=>{
     console.log("adding client")
     console.log("body",req.body)   
     var firstName = req.body.first_name;

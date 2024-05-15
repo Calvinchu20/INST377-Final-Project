@@ -121,7 +121,7 @@ async function createAnalysis(){
 
 }
 async function createUser(){
-    await fetch(`${host}/trackers`,{
+    await fetch(`${host}/user`,{
         method:"POST",
         body: JSON.stringify({
             "first_name": `${document.getElementById('firstName').value}`, 
