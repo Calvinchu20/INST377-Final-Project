@@ -113,10 +113,10 @@ body {
 }
 #foodImage{
     text-align: center;
-    margin: auto;
-    margin-right: auto;
+    margin-left: auto;
+    
     width: 60%;
-    height:40%;
-    padding: 20px;
+    height:45%;
+  
     
 }
