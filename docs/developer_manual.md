@@ -7,6 +7,13 @@
     -`git clone <repository>` or use the github desktop application
  2. install the dependencies
 
+    - install nvm from the link: https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/
+
+
+     - open terminal or command prompt, then install node
+
+     -`nvm install node`
+
     
      -`npm install express`
 
@@ -17,7 +24,7 @@
 # how to run the application
   local serve
   
-  call npm start 
+  call npm start in command prompt or terminal
 
      
     `npm start`
@@ -53,7 +60,7 @@ receive the user's name,goal calories, and goal macros
 
 
 # roadmap for future/bugs
-  1. Known Bugsd
+  1. Known Bugs
     
  
        duplicate users entries are implemented in the api and causes confusion for analysis
