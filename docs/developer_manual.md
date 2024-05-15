@@ -61,7 +61,10 @@ receive the user's name,goal calories, and goal macros
 
 # roadmap for future/bugs
   1. Known Bugs
+
+
     duplicate users entries are implemented in the api and causes confusion for analysis
+
 
   2. roadmap
 
