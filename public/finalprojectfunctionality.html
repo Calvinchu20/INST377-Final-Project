@@ -23,61 +23,23 @@
     <nav id="main-nav">
         <a href="finalprojecthome.html" class="home">Home</a>
         <a href="finalprojectabout.html" class="about">About Us</a>
-        <a href="finalprojectfunctionality.html" class="help">Functionality</a>
+        <a href="finalprojectfunctionality.html" class="functionality">Functionality</a>
+        <a href="finalprojectcontact.html" class="contact">Contact Us</a>
+        <a href="finalprojectfaqs.html" class="faqs">FAQs</a>
     </nav>
 
     <!--Main Area-->
 
     <div class="main-container">
         <div id="headline">
-            <h2><b>Ask us 24/7!</b></h2>
+            <h2><b>Track Your Nutrition and Achieve Your Dietary Goals</b></h2>
         </div>
 
-
         <div id="content-area">
-            <!--FAQs-->
-            <div>
-                <h3>FAQs</h3>
-                <p>
-                    Question 1: How does this track progress for nutrition?
-                </p>
-                <p>
-                    Answer: This calculates the total intake of food throughout the day and displays the information
-                    into a bar graph for comparsion to your goals.
-                </p>
-                <p>
-                    Question 2: How do should I input the list of food?
-                </p>
-                <p>
-                    Answer: Your input should use commas and avoid using the word 'and' to prevent a crash in the Nutritionix API.
-                </p>
-                <p>
-                    For example your input should look like this: bananas,apples,burger,fries,pizza 
-                </p>
-                <p>
-                    But not like this: bananas,apples,burger,fries, and pizza.
-                </p>
-            </div>
-
-            <!--FAQs-->
-            <div>
-                <h3>FAQs</h3>
-                <p> 
-                    Question 3: How can we update?
-                </p>
-                <p>Answer: You can update your daily progress by reentering the form with the new goals and list of food.</p>
-                <p>Question 4: What do we expect from submitting the form?</p>
-                <p>
-                    Answer: You will get a bar graph that display the comparison as well as text form that show the description of the calculations 
-                    of calories, fats, carbs, and proteins from the list of food.
-                </p>
-                <p>Question 5: What are the measurement of the carbs, fats, and proteins?"</p>
-                <p>Answer: All macronutrition are measured in grams.</p>
-            </div>
-
             <!--Step-by-Step Guide-->
             <div>
                 <h3>Step-by-Step Guide</h3>
+                <h4><u>Macro Tracker</u></h4>
                 <p>
                     step 1: Enter your first and last name
                 </p>
@@ -90,73 +52,79 @@
                 <p>
                     step 4: Submit and track your progress
                 </p>
+
+                <h4><u>Nutrition Breakdown</u></h4>
+                <p>
+                    step 1: Enter a food item
+                </p>
+                <p>
+                    step 2: Submit to view the macro breakdown of the food item
+                </p>
             </div>
 
             <br>
-            
+        </div>
 
-            <!-- Contact Section-->
-            <div class="contact-form">
-                <aside id="contact">
-                    <h2><u>Contact Info</u></h2>
-                    <hr>
+        <!-- Toggle Buttons -->
+        <div class="button-container" id="formToggle">
+            <button id="toggleMacroTracker">Macro Tracker</button>
+            <button id="toggleNutrientBreakdown">Nutrient Breakdown</button>
+        </div>
+        
+    </div>
+
     
-                    <h4>Team Member Names: Calvin Chu</h4>
-                    <h4>Email: INST377-group10@umd.edu</h4>
-                    <h4>Feedback Form:</h4>
-                    <form action ="finalprojecthome.html">
-                        <textarea name="concern" id="message" row ='200' col ='250' style="height: 150px;" required></textarea>
-                        <button class="animated-button" role="button">Contact Us</button>
-                        <!--<input type="submit" value="Contact Us" id="reachOut">   -->             
-                    </form>
 
-                </aside>
-            </div>
+        <!-- Macro Tracker Form -->
+    <div id="macroTrackerForm" style="display:none;">
+        <h2>Macro Tracker</h2>
+        <form id="formCalories" onsubmit="createUser(); return false;">
+            <label for="name">First name</label>
+            <input type="text" id="firstName" required>
+            <br>
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" required>
+            <br>
+            <label for="calories">Goal calories intake</label>
+            <input type="number" id="calories" required>
+            <label for="fats">Goal fats intake</label>
+            <input type="number" id="fats" required>
+            <label for="carbs">Goal carbs intake</label>
+            <input type="number" id="carbs" required>
+            <label for="protein">Goal protein intake</label>
+            <input type="number" id="protein" required> 
+            <br>
+            <label for="food">Please list the food you ate today (use commas)</label>
+            
+            <textarea name="foods" id="foodList" row ='200' col ='250' style="width: 500px; height: 150px;" placeholder="e.g. bananas,apples,burger,fries,pizza" required></textarea>
+            <br>
+            <input type="submit">          
+    
+        </form>
+
+        <div id ="chartbox">
+            <canvas id = "progress" width ="200"></canvas>
+    
+        </div>
+
+        <div id = 'analysis'>
+
         </div>
     </div>
-    <h2>Macro Tracker</h2>
-    <form id="formCalories" onsubmit="createUser(); return false;">
-        <label for="name">First name</label>
-        <input type="text" id="firstName" required>
-        <br>
-        <label for="lastName">Last name</label>
-        <input type="text" id="lastName" required>
-        <br>
-        <label for="calories">Goal calories intake</label>
-        <input type="number" id="calories" required>
-        <label for="fats">Goal fats intake</label>
-        <input type="number" id="fats" required>
-        <label for="carbs">Goal carbs intake</label>
-        <input type="number" id="carbs" required>
-        <label for="protein">Goal protein intake</label>
-        <input type="number" id="protein" required> 
-        <br>
-        <label for="food">Please list the food you ate today (use commas)</label>
-        
-        <textarea name="foods" id="foodList" row ='200' col ='250' style="width: 500px; height: 150px;" required></textarea>
-        <br>
-        <input type="submit">          
 
-    </form>
-    <div id ="chartbox">
-        <canvas id = "progress" width ="200"></canvas>
-
-    </div>
-    <div id = 'analysis'>
-
-    </div>
-
-    <h2>Nutrient Breakdown</h2>
-    <form id="nutrientForm">
-        <label for="foodInput">Enter Food Item:</label>
-        <input type="text" id="foodInput" name="foodInput" placeholder="e.g. banana" required>
-        <button type="submit">Analyze Nutrition</button>
-    </form>
-    <div class="chart-container">
-        <canvas id="nutrientChart"></canvas>
+    <!-- Nutrient Breakdown Form -->
+    <div id="nutrientBreakdownForm" style="display:none;">
+        <h2>Nutrient Breakdown</h2>
+        <form id="nutrientForm">
+            <label for="foodInput">Enter Food Item:</label>
+            <input type="text" id="foodInput" name="foodInput" placeholder="e.g. banana" required>
+            <button type="submit">Analyze Nutrition</button>
+        </form>
+        <div class="chart-container">
+            <canvas id="nutrientChart"></canvas>
+        </div>
     </div>
     
-
     <footer id="footbar">
         <p>Group 10</p>
     </footer>

@@ -151,10 +151,44 @@ function contactForm() {
 
 let nutritionChart;
 
-document.getElementById('nutrientForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting traditionally
-    const foodItem = document.getElementById('foodInput').value;
-    displayNutrientBreakdown(foodItem); // Call the function to update the chart with the new food item
+document.addEventListener('DOMContentLoaded', function() {
+    const nutrientForm = document.getElementById('nutrientForm');
+    if (nutrientForm) {
+        nutrientForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting traditionally
+            const foodItem = document.getElementById('foodInput').value;
+            displayNutrientBreakdown(foodItem); // Call the function to update the chart with the new food item
+        });
+    }
+
+    // Functionality toggling 
+    const macroTrackerButton = document.getElementById('toggleMacroTracker');
+    const nutrientBreakdownButton = document.getElementById('toggleNutrientBreakdown');
+    const macroTrackerForm = document.getElementById('macroTrackerForm');
+    const nutrientBreakdownForm = document.getElementById('nutrientBreakdownForm');
+
+    if(macroTrackerButton){
+        macroTrackerButton.addEventListener('click', function() {
+            macroTrackerForm.style.display = 'block';
+            nutrientBreakdownForm.style.display = 'none';
+        });
+    
+        nutrientBreakdownButton.addEventListener('click', function() {
+            nutrientBreakdownForm.style.display = 'block';
+            macroTrackerForm.style.display = 'none';
+        });
+    }
+
+    // FAQ toggling 
+    const faqButtons = document.querySelectorAll('.faq-question');
+    if(faqButtons){
+        faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const answer = this.nextElementSibling; // This should be the .faq-answer div related to the clicked button
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+    }
 });
 
 async function fetchNutritionData(foodItem) {
