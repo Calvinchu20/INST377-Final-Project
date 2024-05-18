@@ -1,10 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-
-ReactDOM.render(<App />, document.getElementById('root'));
-
-
 const supabaseClient =  require('@supabase/supabase-js')
 const bodyParser = require('body-parser')
 const express = require('express')
