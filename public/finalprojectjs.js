@@ -145,3 +145,7 @@ async function createUser(){
 
 }
 
+function contactForm() {
+    window.location.href = "finalprojecthome.html";
+}
+
