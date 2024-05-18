@@ -155,26 +155,51 @@ document.getElementById('nutrientForm').addEventListener('submit', function(even
     displayNutrientBreakdown(foodItem); // Call the function to update the chart with the new food item
 });
 
-async function displayNutrientBreakdown(foodItem) {
-    const nutritionData = await fetchNutritionData(foodItem);
-    if (nutritionData) {
-        const nutrients = {
-            'Protein': nutritionData.nf_protein,
-            'Fat': nutritionData.nf_total_fat,
-            'Carbohydrates': nutritionData.nf_total_carbohydrate,
-            'Fiber': nutritionData.nf_dietary_fiber,
-            'Sugars': nutritionData.nf_sugars
-        };
-        
-        updateChart(nutrients); // Update the chart with new data
-    } else {
-        console.error('No nutrition data available for the specified item.');
+async function fetchNutritionData(foodItem) {
+    const url = `https://trackapi.nutritionix.com/v2/natural/nutrients`;
+    const headers = {
+        'Content-Type': 'application/json',
+        'x-app-id': ID,
+        'x-app-key': KEY
+    };
+    const body = JSON.stringify({ query: foodItem });
+    
+    try {
+        const response = await fetch(url, { method: 'POST', headers: headers, body: body });
+        const data = await response.json();
+        return data.foods[0];
+    } catch (error) {
+        console.error('Error fetching nutrient data:', error);
     }
 }
 
+async function displayNutrientBreakdown(foodItem) {
+    try {
+        const nutritionData = await fetchNutritionData(foodItem);
+        if (nutritionData) {
+            const nutrients = {
+                'Protein': nutritionData.nf_protein,
+                'Fat': nutritionData.nf_total_fat,
+                'Carbohydrates': nutritionData.nf_total_carbohydrate,
+                'Fiber': nutritionData.nf_dietary_fiber,
+                'Sugars': nutritionData.nf_sugars
+            };
+            updateChart(nutrients);
+        } else {
+            console.error('No nutrition data available for the specified item.');
+        }
+    } catch (error) {
+        console.error('Error in displayNutrientBreakdown:', error);
+    }
+}
+
+
 function updateChart(nutrients) {
     const ctx = document.getElementById('nutrientChart').getContext('2d');
-    if (window.nutrientChart) {
+    console.log('Chart context:', ctx);
+    console.log('Chart instance:', window.nutrientChart);
+    console.log('Nutrient labels: ', Object.keys(nutrients));
+    if (null) {
         window.nutrientChart.data.labels = Object.keys(nutrients);
         window.nutrientChart.data.datasets.forEach((dataset) => {
             dataset.data = Object.values(nutrients);
@@ -206,6 +231,3 @@ function updateChart(nutrients) {
         });
     }
 }
-
-
-
