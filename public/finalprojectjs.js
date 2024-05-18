@@ -149,6 +149,8 @@ function contactForm() {
     window.location.href = "finalprojecthome.html";
 }
 
+let nutritionChart;
+
 document.getElementById('nutrientForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the form from submitting traditionally
     const foodItem = document.getElementById('foodInput').value;
@@ -199,14 +201,14 @@ function updateChart(nutrients) {
     console.log('Chart context:', ctx);
     console.log('Chart instance:', window.nutrientChart);
     console.log('Nutrient labels: ', Object.keys(nutrients));
-    if (null) {
-        window.nutrientChart.data.labels = Object.keys(nutrients);
-        window.nutrientChart.data.datasets.forEach((dataset) => {
+    if (nutritionChart) {
+        nutritionChart.data.labels = Object.keys(nutrients);
+        nutritionChart.data.datasets.forEach((dataset) => {
             dataset.data = Object.values(nutrients);
         });
-        window.nutrientChart.update();
+        nutritionChart.update();
     } else {
-        window.nutrientChart = new Chart(ctx, {
+        nutritionChart = new Chart(ctx, {
             type: 'pie',
             data: {
                 labels: Object.keys(nutrients),
