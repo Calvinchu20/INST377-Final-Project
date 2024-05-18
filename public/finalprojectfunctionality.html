@@ -6,6 +6,7 @@
     <title>INST377 - Final Project - Functionality</title>
     <link rel="stylesheet" href="Final-Project.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src = 'finalprojectjs.js' defer></script>
 
 </head>
@@ -84,7 +85,7 @@
                     step 2: Input your goals calories, fats(g), carbs(g), protein(g)
                 </p>
                 <p>
-                    step 3: List the food you ate today and make sure to use "," with no space
+                    step 3: List the food you ate today and make sure to use "," with no space and dont use and to avoid crashing
                 </p>
                 <p>
                     step 4: Submit and track your progress
@@ -95,7 +96,7 @@
             
 
             <!-- Contact Section-->
-            <div>
+            <div class="contact-form">
                 <aside id="contact">
                     <h2><u>Contact Info</u></h2>
                     <hr>
@@ -113,6 +114,7 @@
             </div>
         </div>
     </div>
+    <h2>Macro Tracker</h2>
     <form id="formCalories" onsubmit="createUser(); return false;">
         <label for="name">First name</label>
         <input type="text" id="firstName" required>
@@ -141,10 +143,19 @@
 
     </div>
     <div id = 'analysis'>
-        
 
     </div>
 
+    <h2>Nutrient Breakdown</h2>
+    <form id="nutrientForm">
+        <label for="foodInput">Enter Food Item:</label>
+        <input type="text" id="foodInput" name="foodInput" placeholder="e.g., banana, apple" required>
+        <button type="submit">Analyze Nutrition</button>
+    </form>
+    <div class="chart-container">
+        <canvas id="nutrientChart"></canvas>
+    </div>
+    
 
     <footer id="footbar">
         <p>Group 10</p>
