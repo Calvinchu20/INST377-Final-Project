@@ -214,3 +214,10 @@ hr {
 .contact-form button:hover {
     background-color: #1a2e50;
 }
+
+.chart-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
